@@ -1,0 +1,23 @@
+body {
+    background: yellow;
+}
+
+
+
+#timer {
+    font-size: 150px;
+    font-size: 90px;
+  }
+
+  .row {
+      text-align: center;
+  }
+
+
+  .card {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background-color: green;
+
+  }

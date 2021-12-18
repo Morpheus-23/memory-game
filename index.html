@@ -1,16 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="An online memory game for all ages, ">
+        <meta name="keywords" content="memory, game, fun, flip cards">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>MemoryGames4U</title>
+    </head>
+
+    <body>
+        <header>
+            <h1 class="heading">
+                MEMORY GAMES FOR YOU
+            </h1>
+        </header>
+        <div class="game-area">
+            <div>
+                <nav>
+                    <div class="chooselevels">
+                        <span>Choose your level:</span>
+                        <span><a id="level-easy" href="easy.html">easy peasy</a><button onclick="makeEasyBoard()">Easy</button></span>
+                        <span><a id="level-medium" href="medium.html">not berry easy</a></span>
+                        <span><a id="level-hard" href="hard.html">nut easy at all</a></span>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="main-game-area"> </div>
+            <div>
+                <span>Moves </span>
+                <span>Score</span>
+                <span>Timer</span>
+                <span #="timer">00:00</span>
+            </div>
+            <div id="game-board"></div>
+
+        </div>
+        <div>
+            <table>
+                <tr>
+
+                </tr>
+            </table>
+        </div>
+        </div>
+
+        <footer>
+            <div>
+                <h3>How to play</h3>
+                <p>The game consists of three levels, easy, medium and challenging. Each level consists of cards that
+                    should be flipped to reveal the images hidden underneath. The aim is to find and click on all of
+                    pairs of similar images before the time runs out. The more challenging levels have more cards and a
+                    little bit of extra time to find the pairs. Good luck and have fun!
+                </p>
+            </div>
+            <div>
+                <h3>Contact us</h3>
+                <p>
+                    We create personalised online games. Fancy seeing pictures of your family, friends, pets, colleagues
+                    in an online game? For further information please do not hesitate to contact our offices:
+                    <li>games4u@gmail.com</li>
+                    <li><a href="https://www.facebook.com" target="_blank"></a>Facebook</li>
+                </p>
+            </div>
+        </footer>
 
 
-    <script src="assets/js/script.js"></script>
-</body>
+        <script src="assets/js/script.js"></script>
+        <script>
+            function makeEasyBoard() {
+                alert("dfsdfsdfsf");
+                document.getElementById("game-board").innerHTML("<object type='text/html' data='/easy.html'></object>");
+            }
+        </script>
+    </body>
+
 </html>
