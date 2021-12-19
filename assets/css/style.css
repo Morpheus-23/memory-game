@@ -4,29 +4,30 @@
 
 
 *{
-    margin:0;
-    padding:0;
-    border:0;
+    margin: 0;
+    
 }
 
 body {
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
-    color: blue;
-    background-color: greenyellow;
+    color: black;
+    background-color: yellow;
 }
 
 
 
 
-.body.header {
+.heading {
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
 
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
@@ -65,7 +66,7 @@ body {
 
 .card-unselected {
     background-image: url("/assets/images/questions.jpg");
-    background-size: 80%;
+    background-size: 99%;
     background-repeat: no-repeat;
     background-position: center;
 }

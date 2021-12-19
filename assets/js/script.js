@@ -25,6 +25,7 @@
 //=== game board functions =================================
 var selection1 = null;
 var selection2 = null;
+var gameLevel = null;
 
 //--- game play -----------------------------
 function cardClicked(event) {
@@ -83,7 +84,11 @@ function isMatch() {
 }
 
 //--- game setup -----------------------------
-function renderBoard(size) {
+function renderBoard(level, size) {
+  if (level==null) {
+    return;
+  }
+  gameLevel = level;
   clearBoard();
   var gameBoard = document.getElementById("game-board");
   for (var i = 0; i < size; i++) {
@@ -126,10 +131,10 @@ function createCards() {
 
   for (var i = 0; i < cardPairs; i++) {
     cardIndex = Math.floor(Math.random() * cards.length);
-    createCard(cards[cardIndex], "easy_" + i);
+    createCard(cards[cardIndex], gameLevel + "_" + i);
     cards.splice(cardIndex, 1);
     cardIndex = Math.floor(Math.random() * cards.length);
-    createCard(cards[cardIndex], "easy_" + i);
+    createCard(cards[cardIndex], gameLevel + "_" + i);
     cards.splice(cardIndex, 1);
   }
 
@@ -138,9 +143,9 @@ function createCards() {
 function createCard(card, dataLabel) {
   card.setAttribute("data-card-label", dataLabel);
   // card.style.backgroundImage = "url('/assets/images/questions.jpg')"; 
-  var img = document.createElement("IMG");
-  img.src = "/assets/images/questions.jpg"
-  
-  card.appendChild(img);
+  // var img = document.createElement("IMG");
+  // img.src = "/assets/images/questions.jpg"
+
+  // card.appendChild(img);
 
 }
