@@ -105,7 +105,7 @@ function clearBoard() {
 }
 
 function setupBoard() {
-  alert("setupBoard");
+
   var cards = document.getElementsByClassName("card");
   for (var card of cards) {
     unselectCard(card);
@@ -114,14 +114,12 @@ function setupBoard() {
 }
 
 function unselectCard(card) {
-
   card.classList.remove("card-selected");
   card.classList.add("card-unselected");
   card.innerHTML = card.getAttribute("");
 }
 
 function createCards() {
-  alert("createCards");
   var cards = Array.from(document.getElementsByClassName("card"));
   var cardPairs = cards.length / 2;
   var cardIndex = 0;
@@ -139,10 +137,10 @@ function createCards() {
 
 function createCard(card, dataLabel) {
   card.setAttribute("data-card-label", dataLabel);
-  alert("createCard");
   // card.style.backgroundImage = "url('/assets/images/questions.jpg')"; 
   var img = document.createElement("IMG");
   img.src = "/assets/images/questions.jpg"
+  
   card.appendChild(img);
 
 }

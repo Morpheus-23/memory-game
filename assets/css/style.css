@@ -64,5 +64,16 @@ body {
 }
 
 .card-unselected {
-    background-color: lightgray;
+    background-image: url("/assets/images/questions.jpg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
+/* image styles */
+/* .card-back {
+    background-image: url("/assets/images/questions.jpg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
