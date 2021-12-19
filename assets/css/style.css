@@ -4,6 +4,11 @@
 
 *{
     margin: 0;
+    border: 0;
+    padding-top: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
     
 }
 
@@ -16,7 +21,6 @@ body {
 .heading {
     text-align: center;
     font-weight: 600;
-
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -38,7 +42,7 @@ body {
     display: inline-block;
     width: 60px;
     height: 60px;
-    background-color: green;
+    background-color: yellow;
 
 }
 

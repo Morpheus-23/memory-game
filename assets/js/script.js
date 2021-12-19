@@ -128,11 +128,14 @@ function renderBoard(level, size) {
 }
 
 function clearBoard() {
-  var cards = document.getElementsByClassName("card");
+  // var cards = document.getElementsByClassName("card");
   var gameBoard = document.getElementById("game-board");
-  for (var card of cards) {
-    gameBoard.removeChild(card);
+  while(gameBoard.firstChild) {
+    gameBoard.removeChild(gameBoard.firstChild);
   }
+  // for (var card of cards) {
+  //   gameBoard.removeChild(card);
+  // }
 }
 
 function setupBoard() {
