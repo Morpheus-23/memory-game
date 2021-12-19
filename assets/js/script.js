@@ -26,6 +26,8 @@ function endCount() {
 
 //=== game board functions =================================
 
+
+
 function renderBoard(size) {
   for (var i = 0; i < size; i++) {
       var gameBoard = document.getElementById("game-board");
@@ -38,3 +40,40 @@ function renderBoard(size) {
   }
 }
 
+function resetBoard() {
+
+  var cards = document.getElementsByClassName("card");
+  for (var card of cards) {
+      unselectCard(card);
+  }
+  createCards();
+}
+
+function unselectCard(card) {
+
+  card.classList.remove("card-selected");
+  card.classList.add("card-unselected");
+  card.innerHTML = card.getAttribute("");
+}
+
+function createCards() {
+
+  var cards = Array.from(document.getElementsByClassName("card"));
+  var cardPairs = cards.length / 2;
+  var cardIndex = 0;
+
+  for (var i = 0; i < cardPairs; i++) {
+      cardIndex = Math.floor(Math.random() * cards.length);
+      createCard(cards[cardIndex], "easy_" + i);
+      cards.splice(cardIndex, 1);
+      cardIndex = Math.floor(Math.random() * cards.length);
+      createCard(cards[cardIndex], "easy_" + i);
+      cards.splice(cardIndex, 1);
+  }
+
+}
+
+function createCard(card, dataLabel) {
+  card.setAttribute("data-card-label", dataLabel);
+
+}
