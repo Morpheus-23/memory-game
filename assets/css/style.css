@@ -1,23 +1,68 @@
-body {
-    background: yellow;
+
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@204&display=swap');
+
+
+
+*{
+    margin:0;
+    padding:0;
+    border:0;
 }
+
+body {
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+    background-color: greenyellow;
+}
+
+
+
+
+.body.header {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 
 
 
 #timer {
     font-size: 150px;
     font-size: 90px;
-  }
+}
 
-  .row {
-      text-align: center;
-  }
+.row {
+    text-align: center;
+}
 
 
-  .card {
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      background-color: green;
+.card {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: green;
 
-  }
+}
+
+.card {
+    border: 1px;
+    border-color: darkgrey;
+    border-style: solid;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+.card-selected {
+    background-color: aqua;
+}
+
+.card-unselected {
+    background-color: lightgray;
+}

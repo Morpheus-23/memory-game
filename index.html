@@ -8,47 +8,89 @@
         <meta name="description" content="An online memory game for all ages, ">
         <meta name="keywords" content="memory, game, fun, flip cards">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Genos:wght@204&display=swap" rel="stylesheet">
         <title>MemoryGames4U</title>
     </head>
 
     <body>
 
         <header>
-            <h1 class="heading">
+            <h1 id="heading">
                 MEMORY GAMES FOR YOU
             </h1>
+            <br>
+            <nav>
+                <div class="chooselevels">
+                    <span>Choose your level:</span>
+                    <span><button onclick="renderBoard(8)">easy peasy</button></span>
+                    <span><a id="level-medium" href="medium.html">not berry easy</a></span>
+                    <span><a id="level-hard" href="hard.html">nut easy at all</a></span>
+                </div>
+            </nav>
         </header>
         <div class="game-area">
             <div>
-                <nav>
+                <!-- <nav>
                     <div class="chooselevels">
                         <span>Choose your level:</span>
-                        <span><a id="level-easy" href="easy.html">easy peasy</a><button
-                                onclick="makeEasyBoard()">Easy</button></span>
+                        <span><button onclick="renderBoard(8)">easy peasy</button></span>
                         <span><a id="level-medium" href="medium.html">not berry easy</a></span>
                         <span><a id="level-hard" href="hard.html">nut easy at all</a></span>
                     </div>
-                </nav>
+                </nav> -->
             </div>
+            <br>
 
-            <div class="main-game-area"> </div>
+            <!-- <div class="main-game-area"> </div> -->
             <div>
                 <span>Moves </span>
                 <span>Score</span>
                 <span>Timer</span>
                 <span #="timer">00:00</span>
             </div>
-            <div id="game-board"></div>
+            <div class="row" id="game-board"></div>
 
         </div>
-        <div>
-            <table>
-                <tr>
 
-                </tr>
-            </table>
+        <!-- 
+        <div class="row">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
         </div>
+ -->
+
+
+
+        <!-- <div class="container">
+            <div class="row">
+
+                <div type="button" id="lemonone" img="lemonone" class="btn lemonone">
+
+                </div>
+
+                <div type="button" id="lemontwo" class="btn lemontwo">
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div type="button" id="lemonthree" class="btn lemonthree">
+
+                </div>
+                <div type="button" id="lemonfour" class="btn lemonfour">
+
+                </div>
+
+            </div>
+
         </div>
+
+        </div> -->
 
         <footer>
             <div>
@@ -75,7 +117,7 @@
         <script>
             function makeEasyBoard() {
                 alert("dfsdfsdfsf");
-                document.getElementById("game-board").innerHTML("<object type='text/html' data='/easy.html'></object>");
+                document.getElementById(game - board).innerHTML("<object type='text/html' data='/easy.html'></object>");
             }
 
         </script>
