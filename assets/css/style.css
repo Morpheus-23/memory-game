@@ -12,25 +12,59 @@
     
 }
 
+
 body {
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-    background-color: yellow;
+    color: darkgreen;
+    background-color: #ccff99;
 }
 
 .heading {
+    color: darkgreen;
     text-align: center;
     font-weight: 600;
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body {
+.choose-levels {
+    text-align: center;
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#easy-p {
+    background-color: yellow;
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#med-p {
+    background-color: deeppink;
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#har-p {
+    background-color: forestgreen;
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.game-area {
+    text-align: center;
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#start {
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+    background-color: orangered;
+    font-stretch: ultra-expanded;
+}
+
+#moves {
+    background-color: orange;
+
+}
+
 #timer {
-    font-size: 150px;
-    font-size: 90px;
+    background-color: orange;
 }
 
 .row {
@@ -42,7 +76,7 @@ body {
     display: inline-block;
     width: 60px;
     height: 60px;
-    background-color: yellow;
+    
 
 }
 
@@ -50,10 +84,14 @@ body {
     background-size: 99%;
     background-repeat: no-repeat;
     background-position: center;
+    width: 60px;
+    height: 60px;
 }
 
 .card-unselected {
     background-size: 99%;
     background-repeat: no-repeat;
     background-position: center;
+    width: 60px;
+    height: 60px;
 }

@@ -15,36 +15,36 @@
     </head>
 
     <body>
-
         <header>
             <h1 class="heading">
                 MEMORY GAMES FOR YOU
             </h1>
-            <br>
             <nav>
-                <div class="chooselevels">
-                    <span>Choose your level:</span>
-                    <span><button onclick="renderBoard('easy', 8)">easy peasy</button></span>
-                    <span><button onclick="renderBoard('medium', 12)">not so easy</button></span>
-                    <span><button onclick="renderBoard('hard', 16)">oh boy it's hard</button></span>
-
+                <div class="choose-levels">
+                    <span>
+                        <h2>Choose your level:</h2>
+                    </span>
+                    <span><button id="easy-p" onclick="renderBoard('easy', 8)">easy peasy lemon squeezy</button></span>
+                    <span><button id="med-p" onclick="renderBoard('medium', 12)">the more the "berrier"</button></span>
+                    <span><button id="har-p" onclick="renderBoard('hard', 16)">are you nuts about a
+                            challenge?</button></span>
                 </div>
             </nav>
         </header>
+
         <div class="game-area">
             <div>
-                <span>Moves </span>
-                <span>Score</span>
-                <span>Timer</span>
+                <span><button id="start" onclick="setupBoard()">START</button></span>
+                <span id="moves">MOVES</span>
+                <span id="timer">TIMER</span>
                 <!-- <span #="timer">00:00</span> -->
-                <span><button onclick="setupBoard()">START</button></span>
             </div>
             <div class="row" id="game-board"></div>
         </div>
 
         <footer>
             <div>
-                <h3>How to play</h3>
+                <h3>How to play:</h3>
                 <p>The game consists of three levels, easy, medium and hard. Each level consists of cards that
                     should be flipped to reveal the images hidden underneath. The aim is to find and click on all of
                     pairs of similar images before the time runs out. The more challenging levels have more cards and a
