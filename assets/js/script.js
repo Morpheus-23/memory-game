@@ -25,26 +25,92 @@ function endCount() {
 }
 
 //=== game board functions =================================
+var selection1 = null;
+var selection2 = null;
 
+//--- game play -----------------------------
+function cardClicked(event) {
 
+  var card = event.target;
 
-function renderBoard(size) {
-  for (var i = 0; i < size; i++) {
-      var gameBoard = document.getElementById("game-board");
-      //<div id="card1" class="card" onclick="cardClicked(event)"></div>
-      var card = document.createElement("div");
-      card.setAttribute("id", "card"+i);
-      card.setAttribute("class", "card");
-      card.setAttribute("onclick", "cardClicked(event)");
-      gameBoard.appendChild(card);
+  //ignore click if already selected
+  if (card.classList.contains("card-selected")) {
+    return;
+  }
+
+  if (selection1 == null && selection2 == null) { //the first select
+    selection1 = card.getAttribute("id");
+    selectCard(selection1);
+  } else if (selection1 != null && selection2 == null) { // the second select
+    selection2 = card.getAttribute("id");
+    selectCard(selection2);
+    if (isMatch()) {
+      selection1 = null;
+      selection2 = null;
+    } else {
+      setTimeout(() => {
+
+        unselectCard(document.getElementById(selection1));
+        unselectCard(document.getElementById(selection2));
+        selection1 = null;
+        selection2 = null;
+      }, 1000);
+    }
   }
 }
 
-function resetBoard() {
+
+function selectCard(cardId) {
+
+  var card = document.getElementById(cardId);
+  card.classList.remove("card-unselected");
+  card.classList.add("card-selected");
+  card.innerHTML = card.getAttribute("data-card-label");
+
+}
+
+function unselectCard(card) {
+
+  card.classList.remove("card-selected");
+  card.classList.add("card-unselected");
+  card.innerHTML = card.getAttribute("");
+}
+
+
+function isMatch() {
+  var selection1Type = document.getElementById(selection1).getAttribute("data-card-label");
+  var selection2Type = document.getElementById(selection2).getAttribute("data-card-label");
+
+  return (selection1Type === selection2Type);
+}
+
+//--- game setup -----------------------------
+function renderBoard(size) {
+  clearBoard();
+  var gameBoard = document.getElementById("game-board");
+  for (var i = 0; i < size; i++) {
+    //<div id="card1" class="card" onclick="cardClicked(event)"></div>
+    var card = document.createElement("div");
+    card.setAttribute("id", "card" + i);
+    card.setAttribute("class", "card");
+    card.setAttribute("onclick", "cardClicked(event)");
+    gameBoard.appendChild(card);
+  }
+}
+
+function clearBoard() {
+  var cards = document.getElementsByClassName("card");
+  var gameBoard = document.getElementById("game-board");
+  for (var card of cards) {
+    gameBoard.removeChild(card);
+  }
+}
+
+function setupBoard() {
 
   var cards = document.getElementsByClassName("card");
   for (var card of cards) {
-      unselectCard(card);
+    unselectCard(card);
   }
   createCards();
 }
@@ -63,12 +129,12 @@ function createCards() {
   var cardIndex = 0;
 
   for (var i = 0; i < cardPairs; i++) {
-      cardIndex = Math.floor(Math.random() * cards.length);
-      createCard(cards[cardIndex], "easy_" + i);
-      cards.splice(cardIndex, 1);
-      cardIndex = Math.floor(Math.random() * cards.length);
-      createCard(cards[cardIndex], "easy_" + i);
-      cards.splice(cardIndex, 1);
+    cardIndex = Math.floor(Math.random() * cards.length);
+    createCard(cards[cardIndex], "easy_" + i);
+    cards.splice(cardIndex, 1);
+    cardIndex = Math.floor(Math.random() * cards.length);
+    createCard(cards[cardIndex], "easy_" + i);
+    cards.splice(cardIndex, 1);
   }
 
 }
