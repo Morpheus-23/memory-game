@@ -39,10 +39,10 @@ function cardClicked(event) {
 
   if (selection1 == null && selection2 == null) { //the first select
     selection1 = card.getAttribute("id");
-    selectCard(selection1);
+    selectCard(card);
   } else if (selection1 != null && selection2 == null) { // the second select
     selection2 = card.getAttribute("id");
-    selectCard(selection2);
+    selectCard(card);
     if (isMatch()) {
       selection1 = null;
       selection2 = null;
@@ -59,20 +59,40 @@ function cardClicked(event) {
 }
 
 
-function selectCard(cardId) {
+function selectCard(card) {
 
-  var card = document.getElementById(cardId);
+  // var imageUrl = "/assets/images/" + card.getAttribute("data-card-label") + ".jpg";
+  // console.log("imageUrl: " + imageUrl);
+  // $(".card-selected").css("background-image", "url(" + imageUrl + ")");
+
+  // var card = document.getElementById(cardId);
   card.classList.remove("card-unselected");
   card.classList.add("card-selected");
-  card.innerHTML = card.getAttribute("data-card-label");
+  setCardBackground(card);
+  // var dataLabel = card.getAttribute("data-card-label");
+  // card.innerHTML = dataLabel;
+  // var dataIndex = card.getAttribute("data-card-index");
+  // alert("card-img" + dataIndex);
+  // var cardImg = document.getElementById("card-img" + dataIndex);
+  // cardImg.src = "/assets/images/" + dataLabel + ".jpg"
 
 }
 
 function unselectCard(card) {
 
+  // var imageUrl = "/assets/images/questions.jpg";
+  // $(".card-unselected").css("background-image", "url(" + imageUrl + ")");
+
   card.classList.remove("card-selected");
   card.classList.add("card-unselected");
-  card.innerHTML = card.getAttribute("");
+  clearCardBackground(card);
+  // card.innerHTML = card.getAttribute("");
+  // var dataIndex = card.getAttribute("data-card-index");
+  // alert("card-img" + dataIndex);
+  // var cardImg = document.getElementById("card-img" + dataIndex);
+  // cardImg.src = "/assets/images/questions.jpg"
+
+
 }
 
 
@@ -85,7 +105,7 @@ function isMatch() {
 
 //--- game setup -----------------------------
 function renderBoard(level, size) {
-  if (level==null) {
+  if (level == null) {
     return;
   }
   gameLevel = level;
@@ -97,6 +117,12 @@ function renderBoard(level, size) {
     card.setAttribute("id", "card" + i);
     card.setAttribute("class", "card");
     card.setAttribute("onclick", "cardClicked(event)");
+    card.setAttribute("data-card-index", i);
+    // card.setAttribute("data-card-label", level + "_" + index);
+    // var img = document.createElement("IMG");
+    // img.setAttribute("id", "card-img" + i);
+    // img.src = "/assets/images/1x1.png";
+    // card.appendChild(img);
     gameBoard.appendChild(card);
   }
 }
@@ -114,14 +140,8 @@ function setupBoard() {
   var cards = document.getElementsByClassName("card");
   for (var card of cards) {
     unselectCard(card);
-  } 
+  }
   createCards();
-}
-
-function unselectCard(card) {
-  card.classList.remove("card-selected");
-  card.classList.add("card-unselected");
-  card.innerHTML = card.getAttribute("");
 }
 
 function createCards() {
@@ -131,21 +151,41 @@ function createCards() {
 
   for (var i = 0; i < cardPairs; i++) {
     cardIndex = Math.floor(Math.random() * cards.length);
-    createCard(cards[cardIndex], gameLevel + "_" + i);
+    // createCard(cards[cardIndex], cardIndex);
+    cards[cardIndex].setAttribute("data-card-label", gameLevel + "_" + i);
     cards.splice(cardIndex, 1);
     cardIndex = Math.floor(Math.random() * cards.length);
-    createCard(cards[cardIndex], gameLevel + "_" + i);
+    // createCard(cards[cardIndex], cardIndex);
+    cards[cardIndex].setAttribute("data-card-label", gameLevel + "_" + i);
     cards.splice(cardIndex, 1);
   }
 
 }
 
-function createCard(card, dataLabel) {
-  card.setAttribute("data-card-label", dataLabel);
-  // card.style.backgroundImage = "url('/assets/images/questions.jpg')"; 
-  // var img = document.createElement("IMG");
-  // img.src = "/assets/images/questions.jpg"
+function createCard(card, index) {
+  card.setAttribute("data-card-label", gameLevel + "_" + index);
+  // card.setAttribute("data-card-index", index);
 
-  // card.appendChild(img);
+}
 
+// background-image: url("/assets/images/questions.jpg");
+// background-size: 99%;
+// background-repeat: no-repeat;
+// background-position: center;
+function setCardBackground(card) {
+  var imageUrl = "url(/assets/images/" + card.getAttribute("data-card-label") + ".jpg)";
+  console.log("imageUrl : " + imageUrl);
+  card.style.backgroundImage = imageUrl;
+  card.style.backgroundSize = "99%";
+  card.style.backgroundRepeat = "no-repeat";
+  card.style.backgroundPosition = "center";
+}
+
+function clearCardBackground(card) {
+  var imageUrl = "url(/assets/images/questions.jpg)";
+
+  card.style.backgroundImage = imageUrl;
+  card.style.backgroundSize = "99%";
+  card.style.backgroundRepeat = "no-repeat";
+  card.style.backgroundPosition = "center";
 }

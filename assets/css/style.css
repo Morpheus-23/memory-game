@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos:wght@204&display=swap');
 
 
-
 *{
     margin: 0;
     
@@ -14,9 +13,6 @@ body {
     background-color: yellow;
 }
 
-
-
-
 .heading {
     text-align: center;
     font-weight: 600;
@@ -24,14 +20,9 @@ body {
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
 body {
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
-
 
 #timer {
     font-size: 150px;
@@ -51,30 +42,14 @@ body {
 
 }
 
-.card {
-    border: 1px;
-    border-color: darkgrey;
-    border-style: solid;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-}
-
 .card-selected {
-    background-color: aqua;
-}
-
-.card-unselected {
-    background-image: url("/assets/images/questions.jpg");
     background-size: 99%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* image styles */
-/* .card-back {
-    background-image: url("/assets/images/questions.jpg");
-    background-size: 80%;
+.card-unselected {
+    background-size: 99%;
     background-repeat: no-repeat;
     background-position: center;
-} */
+}
