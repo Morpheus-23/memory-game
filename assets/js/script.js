@@ -92,7 +92,7 @@ function createCards() {
 }
 
 function setCardBackground(card) {
-  var imageUrl = "url(/assets/images/" + card.getAttribute("data-card-label") + ".jpg)";
+  var imageUrl = "url(assets/images/" + card.getAttribute("data-card-label") + ".jpg)";
   console.log("imageUrl : " + imageUrl);
   card.style.backgroundImage = imageUrl;
   card.style.backgroundSize = "99%";
@@ -101,7 +101,7 @@ function setCardBackground(card) {
 }
 
 function clearCardBackground(card) {
-  var imageUrl = "url(/assets/images/questions.jpg)";
+  var imageUrl = "url(assets/images/questions.jpg)";
 
   card.style.backgroundImage = imageUrl;
   card.style.backgroundSize = "99%";
