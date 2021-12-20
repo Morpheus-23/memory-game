@@ -1,108 +1,85 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Memory Game For You
 
-Welcome Morpheus-23,
+"Memory Game For You" is a simple interactive card matching game, intended to entertain players of all ages. There are different levels, giving the player a bit more of a challenge as the cards increase and the time limit remains the same.
+    
+## Features
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### Existing Features
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+- This is a single page website with the following clickable buttons:
 
-## Gitpod Reminders
+- __"easy peasy lemon squeezy", "the more the 'berrier'" and "are you nuts about a challenge?" __
+    - Clickable buttons in different bright colours providing an easy and user friendly way to select a game level
+  
+- __Start button__
+    - A bright and clearly indicated button enabling the user to start the game, once a level has been selected
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- __Stop button__
+    - A bright and clearly indicated button enabling the user to stop the game at any point
 
-`python3 -m http.server`
+- __Moves___
+    - Calculates the total amount of times a player has clicked on the question marked cards during a specifiec level
 
-A blue button should appear to click: _Make Public_,
+- __Timer___
+    - After a level has been selected and the start button pressed, the timer counts down 45 seconds.  When the timer reaches 0, the player can no longer select cards and a new game/level may be started
 
-Another blue button should appear to click: _Open Browser_.
+    
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Testing
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* Clicking the level buttons, the start button and stop button are in working order
+* Clicking on the cards do flip them as required
 
-To log into the Heroku toolbelt CLI:
+### Validator testing
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- HTML
+    - Three Html errors found when passing through the official [W3C validator] have been fixed and no errors were present upon deployment. [](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmorpheus-23.github.io%2Fmemory-game%2F)
+- CSS
+    - No CSS erros were found when passing through [(Jigsaw) validator]. Nineteen validation warnings in the styles.css file reported by [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fmorpheus-23.github.io%252Fmemory-game%252F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    - These warnings will be adressed before the next release.
+- JavaScript
+    - Three warnings and three unused variables reported by [https://jshint.com/] will be addressed in the next release.
+- Google Lighthouse Audit - done and issues to be addressed before next release.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+### Unfixed Bugs
 
-## Release History
+* Timer to stop once all pairs of cards have been found
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Deployment
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- The site is deployed to GitHub pages. The steps to deploy were as follows:
+    - In the memory-game GitHub repository, navigate to the Settings tab and scroll down to the Git Hub pages section and selecting "Check it out here!"
+    - From the source section drop-down menu, select the main branch and save
+- The live link can be found here - [https://github.com/Morpheus-23/memory-game](https://morpheus-23.github.io/memory-game/)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Unimplemented assessment criteria
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* README.md needs to be expanded to meet all required criteria.
+* Site testing reports to be reflected in the README.md
+* Wireframes used for planning the site needs to be reflected in the README.md
+* Testing for different screen sizes needs to be reflected in the README.md 
+* Development of the site and challenges encountered to be reflected and explained in the README.md
+* User stories to be reflected in the README.md file
+* The site is not a fun as a game site should be and still needs features to excite and motivate the player, such as pop-up messages, sound clips and reflecting a total score.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Content
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- All images were taken from [Adobe Stockphoto](https://stock.adobe.com/) and [pixabay](https://pixabay.com/)
+- Idea designs were not taken from any specific source, it was merely from planning a logical course of action to design the lay-out, develop the site and make the site as easy and user friendly as possible for players of all ages.
+- A lot of technical implementation information were taken from [Stack Overflow](https://stackoverflow.com/) and [W3Schools](www.w3schools.com).
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Directory structure
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The site content is structured as follows:
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+| Directory | Description |
+|---|---|
+| / | html files  |
+| /assets | non-html content |
+| /assets/css | all style sheets |
+| /assets/images | all images |
+| /assets/js | javascript files |
