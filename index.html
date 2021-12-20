@@ -34,10 +34,14 @@
 
         <div class="game-area">
             <div>
-                <span><button id="start" onclick="setupBoard()">START</button></span>
-                <span id="moves">MOVES</span>
-                <span id="timer">TIMER</span>
-                <!-- <span #="timer">00:00</span> -->
+                <span>
+                    <button id="start-button" disabled="true" onclick="startGameplay()">START</button>
+                    <button id="stop-button" disabled="true" onclick="stopGameplay()">STOP</button>
+                </span>
+                <span id="moves"> MOVES </span>
+                <span id="moves-counter">0</span>
+                <span id="timer"> TIMER </span>
+                <span id="timer-counter">0</span>
             </div>
             <div class="row" id="game-board"></div>
         </div>
@@ -45,10 +49,22 @@
         <footer>
             <div>
                 <h3>How to play:</h3>
-                <p>The game consists of three levels, easy, medium and hard. Each level consists of cards that
-                    should be flipped to reveal the images hidden underneath. The aim is to find and click on all of
-                    pairs of similar images before the time runs out. The more challenging levels have more cards and a
-                    little bit of extra time to find the pairs. Good luck and have fun!
+                <p>Choose one of three levels: easy, medium or hard and press the start button. Cards will appear
+                    onscreen. The easy level will reveal eight cards, the medium level will reveal twelve cards and the
+                    harder level will reveal sixteen cards.
+                    The game consists of finding various pairs of cards, hidden underneath the questionmarked cards. The
+                    aim is to find all the pairs by flipping the questionmarked cards before the time runs out. No more
+                    than two cards can be flipped at any time. Once two similar cards are found, the pair will remain
+                    shown leaving only the balance of the hidden cards to be flipped. If all the pairs are found before
+                    the timer runs
+                    out, the player won the level. If all the pairs have not been found before the timer runs out, the
+                    player may start another game by choosing one of the three levels indicated at the top of the
+                    screen. Pressing the start button will start the timer and thus a new game. If at any time the
+                    player needs to leave the game (for a cup of tea or the doorbell ringing...), the stop button can be
+                    pressed.
+                    This will enable the player to start another game. The stop button may also be pressed if the player
+                    found all the pairs before the timer runs out. The player can then again choose another game / level
+                    and continue..... Good luck and have fun!
                 </p>
             </div>
 

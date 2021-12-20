@@ -8,10 +8,8 @@
     padding-top: 0;
     padding-left: 2%;
     padding-right: 2%;
-    padding-bottom: 2%;
-    
+    padding-bottom: 2%;   
 }
-
 
 body {
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
@@ -39,7 +37,6 @@ body {
 #med-p {
     background-color: deeppink;
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 #har-p {
@@ -52,15 +49,24 @@ body {
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#start {
+#start-button {
     font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: large;
+    background-color: orangered;
+    font-stretch: ultra-expanded;
+}
+
+#stop-button {
+    font-family: Genos, Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: large;
     background-color: orangered;
     font-stretch: ultra-expanded;
 }
 
 #moves {
     background-color: orange;
-
 }
 
 #timer {
@@ -71,13 +77,10 @@ body {
     text-align: center;
 }
 
-
 .card {
     display: inline-block;
     width: 60px;
     height: 60px;
-    
-
 }
 
 .card-selected {
