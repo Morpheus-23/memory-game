@@ -21,9 +21,7 @@
             </h1>
             <nav>
                 <div class="choose-levels">
-                    <span>
-                        <h2>Choose your level:</h2>
-                    </span>
+                    <h2>Choose your level:</h2>
                     <span><button id="easy-p" onclick="renderBoard('easy', 8)">easy peasy lemon squeezy</button></span>
                     <span><button id="med-p" onclick="renderBoard('medium', 12)">the more the "berrier"</button></span>
                     <span><button id="har-p" onclick="renderBoard('hard', 16)">are you nuts about a
@@ -35,8 +33,8 @@
         <div class="game-area">
             <div>
                 <span>
-                    <button id="start-button" disabled="true" onclick="startGameplay()">START</button>
-                    <button id="stop-button" disabled="true" onclick="stopGameplay()">STOP</button>
+                    <button id="start-button" disabled="disabled" onclick="startGameplay()">START</button>
+                    <button id="stop-button" disabled="disabled" onclick="stopGameplay()">STOP</button>
                 </span>
                 <span id="moves"> MOVES </span>
                 <span id="moves-counter">0</span>
@@ -52,8 +50,8 @@
                 <p>Choose one of three levels: easy, medium or hard and press the start button. Cards will appear
                     onscreen. The easy level will reveal eight cards, the medium level will reveal twelve cards and the
                     harder level will reveal sixteen cards.
-                    The game consists of finding various pairs of cards, hidden underneath the questionmarked cards. The
-                    aim is to find all the pairs by flipping the questionmarked cards before the time runs out. No more
+                    The game consists of finding various pairs of cards, hidden underneath the question marked cards. The
+                    aim is to find all the pairs by flipping the question marked cards before the time runs out. No more
                     than two cards can be flipped at any time. Once two similar cards are found, the pair will remain
                     shown leaving only the balance of the hidden cards to be flipped. If all the pairs are found before
                     the timer runs
@@ -69,12 +67,9 @@
             </div>
 
         </footer>
-
-
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="assets/js/script.js"></script>
-
     </body>
 
 </html>
